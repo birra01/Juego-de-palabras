@@ -239,3 +239,38 @@ button.letra.iluminada {
         margin: 3px;
     }
 }
+@media (max-width: 600px) {
+
+    /* Ajustes del contenedor de resumen final */
+    #resumen-final {
+        padding: 10px;
+        width: 95%;
+        margin: 0 auto;
+        font-size: 14px; /* Tamaño de texto más pequeño */
+    }
+
+    /* Tamaño compacto de cada tarjeta de ronda */
+    .tarjeta-ronda {
+        padding: 8px;
+        margin-bottom: 6px;
+    }
+
+    /* Cuadrados de letras usados más pequeños */
+    .letras-usadas {
+        gap: 3px;
+        justify-content: center;
+    }
+
+    .letra-usada {
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+    }
+
+    /* Ajuste del botón "Volver a Jugar" */
+    #reiniciar-juego,
+    #compartir-resultados {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
