@@ -275,3 +275,23 @@ button.letra.iluminada {
         padding: 8px 16px;
     }
 }
+/* Ajustes de teclado en pantallas pequeñas */
+@media (max-width: 600px) {
+
+    /* Mantener estructura en filas para el teclado */
+    .fila-teclado {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 350px;  /* Limitar el ancho para que no se desborde */
+        margin: 5px auto;
+    }
+
+    /* Botones del teclado ajustados */
+    button.letra {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        margin: 2px;
+    }
+}
