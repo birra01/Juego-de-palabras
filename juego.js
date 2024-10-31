@@ -229,8 +229,8 @@ function reiniciarJuego() {
 }
 
 function compartirResultado() {
-    const urlJuego = "https://tu-usuario.github.io/juego-de-palabras";
-    let resultadoVisual = `🟩 Juego de Palabras 🟩\n\nPuntuación: ${puntuacionTotal} puntos\n\n`;
+    const urlJuego = "https://birra01.github.io/Juego-de-palabras/";
+    let resultadoVisual = `🟩 Palabritas 🟩\n\nPuntuación: ${puntuacionTotal} puntos\n\n`;
 
     // Construir la visualización de cada ronda
     desgloseRondas.forEach(ronda => {
@@ -248,7 +248,7 @@ function compartirResultado() {
     });
 
     // Añadir el enlace al juego
-    resultadoVisual += `\n¿Puedes superar mi puntuación? Juega aquí: ${urlJuego}`;
+    resultadoVisual += `\n Juega aquí: ${urlJuego}`;
 
     // Compartir en Twitter
     const urlCompartir = `https://twitter.com/intent/tweet?text=${encodeURIComponent(resultadoVisual)}`;
