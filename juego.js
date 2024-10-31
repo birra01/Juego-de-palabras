@@ -6,6 +6,35 @@ let palabrasValidas = [];
 let puntuacionTotal = 0; 
 let desgloseRondas = [];  // Almacena los puntos y letras iluminadas de cada ronda
 
+// Genera un patrón de letras aleatorias basado en la fecha
+function generarPatronDiario() {
+    const fecha = new Date();
+    const seed = fecha.getFullYear() * 10000 + (fecha.getMonth() + 1) * 100 + fecha.getDate(); // Semilla basada en YYYYMMDD
+    const random = mulberry32(seed);
+    
+    const letrasDisponibles = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+    const patronDiario = [];
+
+    while (patronDiario.length < 4) {
+        const index = Math.floor(random() * letrasDisponibles.length);
+        const letra = letrasDisponibles[index];
+        if (!patronDiario.includes(letra)) {
+            patronDiario.push(letra);
+        }
+    }
+    return patronDiario;
+}
+
+// Función generadora basada en semilla
+function mulberry32(a) {
+    return function() {
+        let t = (a += 0x6D2B79F5);
+        t = Math.imul(t ^ t >>> 15, t | 1);
+        t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+}
+
 // Cargar las palabras desde el JSON
 fetch("palabras.json")
     .then(response => response.json())
@@ -88,15 +117,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Función para iniciar cada ronda
+// Modifica la función de inicio de ronda para usar el patrón diario en la primera partida
 function empezarRonda() {
     if (rondaActual < maxRondas) {
         rondaActual++;
         document.getElementById("ronda").textContent = `Ronda: ${rondaActual}/${maxRondas}`;
         document.getElementById("palabra").value = "";
-        document.querySelectorAll("button.letra").forEach(letra => {
-            letra.classList.remove("iluminada");
-        });
+
+        // Usar el patrón diario solo en la primera ronda del día
+        letrasIluminadas = (rondaActual === 1) ? generarPatronDiario() : [];
         generarLetras();
     } else {
         mostrarResumenFinal();
@@ -193,4 +222,31 @@ function reiniciarJuego() {
     document.getElementById("juego-container").style.display = "block";
     document.getElementById("input-container").style.display = "block";
     empezarRonda();
+}
+
+function compartirResultado() {
+    const urlJuego = "https://birra01.github.io/Juego-de-palabras/";
+    let resultadoVisual = `🟩 Juego de Palabras 🟩\n\nPuntuación: ${puntuacionTotal} puntos\n\n`;
+
+    // Construir la visualización de cada ronda
+    desgloseRondas.forEach(ronda => {
+        resultadoVisual += `Ronda ${ronda.ronda}: `;
+        
+        // Añadir cuadrados de colores por cada letra en la palabra
+        ronda.palabra.split('').forEach(letra => {
+            if (ronda.letrasIluminadas.includes(letra.toUpperCase())) {
+                resultadoVisual += '🟩';  // Verde para letras iluminadas
+            } else {
+                resultadoVisual += '⬜';  // Gris para letras no iluminadas
+            }
+        });
+        resultadoVisual += '\n';  // Nueva línea para la siguiente ronda
+    });
+
+    // Añadir el enlace al juego
+    resultadoVisual += `\n¿Puedes superar mi puntuación? Juega aquí: ${urlJuego}`;
+
+    // Compartir en Twitter
+    const urlCompartir = `https://twitter.com/intent/tweet?text=${encodeURIComponent(resultadoVisual)}`;
+    window.open(urlCompartir, '_blank');
 }
