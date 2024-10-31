@@ -248,10 +248,15 @@ button.letra.iluminada {
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     }
 
+    #resumen-final h2{
+        color: #f1f1f1;
+        margin-bottom: 10px;
+    }
+
     .tarjeta-ronda {
         background-color: #3a3a3a;
-        padding: 4px;
-        margin-bottom: 4px;
+        padding: 2px;
+        margin-bottom: 2px;
         border-radius: 6px;
         color: #ffffff;
         text-align: center;
