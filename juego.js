@@ -172,6 +172,7 @@ function mostrarResumenFinal() {
     puntuacionTotalFinal.textContent = `Puntuación Total: ${puntuacionTotal} puntos`;
     document.getElementById("juego-container").style.display = "none";
     document.getElementById("input-container").style.display = "none";
+    document.getElementById("contenedor").style.display = "none";
     resumenFinal.style.display = "block";
 }
 
@@ -225,7 +226,7 @@ function reiniciarJuego() {
 }
 
 function compartirResultado() {
-    const urlJuego = "https://birra01.github.io/Juego-de-palabras/";
+    const urlJuego = "https://tu-usuario.github.io/juego-de-palabras";
     let resultadoVisual = `🟩 Juego de Palabras 🟩\n\nPuntuación: ${puntuacionTotal} puntos\n\n`;
 
     // Construir la visualización de cada ronda
