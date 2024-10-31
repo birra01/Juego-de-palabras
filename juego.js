@@ -88,12 +88,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const contenedorJuego = document.getElementById("juego-container");
     const contenedorInput = document.getElementById("input-container");
     const contenedorInicio = document.getElementById("inicio-container");
+    const contenedor = document.getElementById("contenedor");
     const resumenFinal = document.getElementById("resumen-final");
     const botonReiniciar = document.getElementById("reiniciar-juego");
 
     botonIniciar.addEventListener("click", function() {
         contenedorInicio.style.display = "none";
         contenedorJuego.style.display = "block";
+        contenedor.style.display = "block";
         contenedorInput.style.display = "block";
         resumenFinal.style.display = "none";
         empezarRonda();
@@ -222,6 +224,7 @@ function reiniciarJuego() {
     document.getElementById("resumen-final").style.display = "none";
     document.getElementById("juego-container").style.display = "block";
     document.getElementById("input-container").style.display = "block";
+    document.getElementById("contenedor").style.display = "block";
     empezarRonda();
 }
 
