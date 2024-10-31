@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Palabras</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <div id="inicio-container">
+            <button id="iniciar-juego">Comenzar</button>
+        </div>
+
+        <div id="juego-container" style="display: none;">
+            <h2>Juego de Palabras</h2>
+            <p id="ronda">Ronda: 0/10</p>
+            <div id="teclado"></div>
+        </div>
+
+        <div id="input-container" style="display: none;">
+            <input type="text" id="palabra" placeholder="Escribe aquí tu palabra">
+            <button id="siguiente">Siguiente</button>
+        </div>
+    </div>
+    
+    <div id="error-message" style="color: red; display: none;"></div>
+
+    <!-- Contenedor para el resumen final de puntos -->
+    <div id="resumen-final" style="display: none; text-align: center;">
+        <h2>Resumen del Juego</h2>
+        <div id="desglose-puntos"></div>
+        <p id="puntuacion-total-final"></p>
+        <button id="reiniciar-juego">Volver a Jugar</button>
+    </div>
+
+    <script src="juego.js"></script>
+</body>
+</html>

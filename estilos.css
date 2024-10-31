@@ -1,0 +1,192 @@
+/* Fondo oscuro y centrado */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1c1c1c;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Contenedor principal centrado */
+#contenedor {
+    text-align: center;
+}
+
+/* Botón "Comenzar" */
+#inicio-container {
+    margin-top: 100px;
+}
+
+#iniciar-juego {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#iniciar-juego:hover {
+    background-color: #45a049;
+}
+
+/* Campo de entrada */
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 2px solid #333;
+    margin-bottom: 20px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Contenedor del teclado */
+#teclado {
+    margin-top: 20px;
+}
+
+/* Estilo para organizar las letras en filas como un teclado estándar */
+.fila-teclado {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Botones del teclado */
+button.letra {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Letras iluminadas */
+button.letra.iluminada {
+    background-color: yellow;
+    color: #000000;
+}
+
+/* Botón "Siguiente" */
+#siguiente {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.input-valido {
+    border-color: green;
+}
+
+.input-invalido {
+    border-color: red;
+}
+
+.letra-usada {
+    background-color: lightgreen;
+    color: black;
+}
+
+.iluminada {
+    background-color: yellow;
+    color: black;
+}
+
+/* Estilo para el mensaje de error */
+#error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    margin-top: 10px;
+    display: none;
+    text-align: center;
+}
+
+/* Estilo del contenedor del resumen final */
+#resumen-final {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#resumen-final h2 {
+    color: #f1f1f1;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Tarjeta de cada ronda */
+.tarjeta-ronda {
+    background-color: #3a3a3a;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-ronda p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Cuadrados de letras usadas en cada ronda */
+.letras-usadas {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.letra-usada {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    background-color: #777777;
+}
+
+.letra-usada.iluminada {
+    background-color: #4CAF50;
+}
+
+/* Botón "Volver a Jugar" */
+#reiniciar-juego {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+#reiniciar-juego:hover {
+    background-color: #2980b9;
+}
