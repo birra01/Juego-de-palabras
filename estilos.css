@@ -48,29 +48,28 @@ input[type="text"] {
     color: #ffffff;
 }
 
-/* Contenedor del teclado */
+/* Ajustes de teclado para mantener tres filas */
 #teclado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
     margin-top: 20px;
 }
 
-/* Estilo para organizar las letras en filas como un teclado estándar */
 .fila-teclado {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    gap: 5px;
 }
 
-/* Botones del teclado */
+/* Tamaño de botones de letra ajustable */
 button.letra {
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 2px solid #333;
-    background-color: #2e2e2e;
-    color: #ffffff;
-    cursor: pointer;
+    width: 10vw;  /* Tamaño relativo al ancho de la pantalla */
+    max-width: 45px;  /* Tamaño máximo para evitar que se agranden demasiado */
+    height: 10vw;
+    max-height: 45px;
+    font-size: 16px;
 }
 
 /* Letras iluminadas */
@@ -204,39 +203,4 @@ button.letra.iluminada {
 
 #compartir-resultados:hover {
     background-color: #0d95e8;
-}
-
-/* Ajustes de teclado en pantallas pequeñas */
-@media (max-width: 600px) {
-
-    /* Fila superior del teclado (QWERTYUIOP) */
-    .fila-teclado:nth-child(1) {
-        display: flex;
-        justify-content: center;
-        max-width: 100%; /* Ancho máximo para la primera fila */
-    }
-
-    /* Fila central del teclado (ASDFGHJKL) */
-    .fila-teclado:nth-child(2) {
-        display: flex;
-        justify-content: center;
-        margin-left: 15px; /* Centrar fila y dar espacio */
-        max-width: 90%;
-    }
-
-    /* Fila inferior del teclado (ZXCVBNM) */
-    .fila-teclado:nth-child(3) {
-        display: flex;
-        justify-content: center;
-        margin-left: 30px; /* Centrar y ajustar fila inferior */
-        max-width: 80%;
-    }
-
-    /* Tamaño de los botones de letra */
-    button.letra {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-        margin: 3px;
-    }
 }
