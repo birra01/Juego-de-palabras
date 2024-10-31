@@ -48,28 +48,29 @@ input[type="text"] {
     color: #ffffff;
 }
 
-/* Ajustes de teclado para mantener tres filas */
+/* Contenedor del teclado */
 #teclado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
     margin-top: 20px;
 }
 
+/* Estilo para organizar las letras en filas como un teclado estándar */
 .fila-teclado {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    margin-bottom: 10px;
 }
 
-/* Tamaño de botones de letra ajustable */
+/* Botones del teclado */
 button.letra {
-    width: 10vw;  /* Tamaño relativo al ancho de la pantalla */
-    max-width: 45px;  /* Tamaño máximo para evitar que se agranden demasiado */
-    height: 10vw;
-    max-height: 45px;
-    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 /* Letras iluminadas */
@@ -189,6 +190,7 @@ button.letra.iluminada {
 #reiniciar-juego:hover {
     background-color: #2980b9;
 }
+
 #compartir-resultados {
     background-color: #1DA1F2; /* Azul de Twitter */
     color: white;
@@ -203,4 +205,37 @@ button.letra.iluminada {
 
 #compartir-resultados:hover {
     background-color: #0d95e8;
+}
+
+/* Ajuste del teclado en pantallas pequeñas */
+@media (max-width: 600px) {
+
+    #contenedor {
+        width: 95%;
+        padding: 10px;
+    }
+
+    /* Teclado en estructura clásica para móviles */
+    #teclado {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    /* Ajuste de cada fila de teclado */
+    .fila-teclado {
+        display: flex;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    /* Tamaño de botones de letra para móviles */
+    button.letra {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 5px;
+        margin: 3px;
+    }
 }
