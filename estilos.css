@@ -219,8 +219,8 @@ button.letra.iluminada {
     #teclado {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 5px;
+        /*align-items: center;
+        gap: 5px;*/
     }
 
     /* Ajuste de cada fila de teclado */
