@@ -275,6 +275,7 @@ button.letra.iluminada {
         padding: 8px 16px;
     }
 }
+
 /* Ajustes de teclado en pantallas pequeñas */
 @media (max-width: 600px) {
 
@@ -293,5 +294,40 @@ button.letra.iluminada {
         height: 35px;
         font-size: 14px;
         margin: 2px;
+    }
+}
+
+/* Ajustes de teclado en pantallas pequeñas */
+@media (max-width: 600px) {
+
+    /* Fila superior del teclado (QWERTYUIOP) */
+    .fila-teclado:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        max-width: 100%; /* Ancho máximo para la primera fila */
+    }
+
+    /* Fila central del teclado (ASDFGHJKL) */
+    .fila-teclado:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        margin-left: 15px; /* Centrar fila y dar espacio */
+        max-width: 90%;
+    }
+
+    /* Fila inferior del teclado (ZXCVBNM) */
+    .fila-teclado:nth-child(3) {
+        display: flex;
+        justify-content: center;
+        margin-left: 30px; /* Centrar y ajustar fila inferior */
+        max-width: 80%;
+    }
+
+    /* Tamaño de los botones de letra */
+    button.letra {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        margin: 3px;
     }
 }
