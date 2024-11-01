@@ -263,3 +263,11 @@ function compartirWhatsApp() {
     const urlCompartir = `https://wa.me/?text=${encodeURIComponent(resultadoVisual)}`;
     window.open(urlCompartir, '_blank');
 }
+function compartirFacebook() {
+    const urlJuego = "https://tu-usuario.github.io/juego-de-palabritas";
+    let resultadoVisual = `🟩 Palabritas 🟩\n\nPuntuación: ${puntuacionTotal} puntos\n\n`;
+    resultadoVisual += "¿Puedes superar mi puntuación? Juega aquí: " + urlJuego + " #juegapalabritas";
+    
+    const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlJuego)}&quote=${encodeURIComponent(resultadoVisual)}`;
+    window.open(urlCompartir, '_blank');
+}
