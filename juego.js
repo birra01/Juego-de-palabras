@@ -254,3 +254,12 @@ function compartirResultado() {
     const urlCompartir = `https://twitter.com/intent/tweet?text=${encodeURIComponent(resultadoVisual)}`;
     window.open(urlCompartir, '_blank');
 }
+
+function compartirWhatsApp() {
+    const urlJuego = "https://birra01.github.io/Juego-de-palabras/";
+    let resultadoVisual = `🟩 Palabritas 🟩\n\nPuntuación: ${puntuacionTotal} puntos\n\n`;
+    resultadoVisual += "¿Puedes superar mi puntuación? Juega aquí: " + urlJuego + " #juegapalabritas";
+    
+    const urlCompartir = `https://wa.me/?text=${encodeURIComponent(resultadoVisual)}`;
+    window.open(urlCompartir, '_blank');
+}
