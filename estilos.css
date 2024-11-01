@@ -263,3 +263,53 @@ button.letra.iluminada {
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     }
 }
+/* Estilo para el contenedor de los botones de compartir */
+#compartir-redes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Estilo general para los botones de compartir */
+#compartir-redes button {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Colores específicos para cada botón */
+#compartir-redes button:nth-child(1) { 
+    background-color: #4267B2; /* Facebook */
+}
+
+#compartir-redes button:nth-child(1):hover {
+    background-color: #365899;
+}
+
+#compartir-redes button:nth-child(2) { 
+    background-color: #25D366; /* WhatsApp */
+}
+
+#compartir-redes button:nth-child(2):hover {
+    background-color: #1EBE5C;
+}
+
+/* Alineación de texto para los botones */
+#compartir-redes button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Opcional: Íconos para mejorar la apariencia visual */
+#compartir-redes button:before {
+    content: attr(data-icon);
+    font-size: 1.2em;
+}
