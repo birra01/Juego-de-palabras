@@ -264,7 +264,7 @@ function compartirWhatsApp() {
     window.open(urlCompartir, '_blank');
 }
 function compartirFacebook() {
-    const urlJuego = "https://tu-usuario.github.io/juego-de-palabritas";
+    const urlJuego = "https://birra01.github.io/Juego-de-palabras/";
     let resultadoVisual = `🟩 Palabritas 🟩\n\nPuntuación: ${puntuacionTotal} puntos\n\n`;
     resultadoVisual += "¿Puedes superar mi puntuación? Juega aquí: " + urlJuego + " #juegapalabritas";
     
