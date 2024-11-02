@@ -248,7 +248,7 @@ function compartirResultado() {
     });
 
     // Añadir el enlace al juego
-    resultadoVisual += `\n Juega aquí: ${urlJuego}`;
+    resultadoVisual += `\n #juegapalabritas Juega aquí: ${urlJuego}`;
 
     // Compartir en Twitter
     const urlCompartir = `https://twitter.com/intent/tweet?text=${encodeURIComponent(resultadoVisual)}`;
